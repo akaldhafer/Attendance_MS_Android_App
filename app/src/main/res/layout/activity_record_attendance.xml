@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MarkAttendance"
+    >
+    <TextView
+        android:id="@+id/tv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Mark Attendance Page"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Ensure to select the right details "
+        android:textSize="17sp" />
+
+
+    <fr.ganfra.materialspinner.MaterialSpinner
+        android:id="@+id/spinnerIntake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/et_custom"
+        android:visibility="visible"
+        app:ms_hint="Select intake code"
+        app:ms_multiline="false" />
+
+    <fr.ganfra.materialspinner.MaterialSpinner
+        android:id="@+id/spinnerCourseAttendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/et_custom"
+        android:visibility="visible"
+        app:ms_hint="Select Course ID"
+        app:ms_multiline="false" />
+    <fr.ganfra.materialspinner.MaterialSpinner
+        android:id="@+id/spinnerTimeDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/et_custom"
+        android:visibility="visible"
+        app:ms_hint="Select The Time Duration"
+        app:ms_multiline="false" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Class No"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:id="@+id/RecordClassNo"/>
+
+    <Button
+        android:id="@+id/btStartRecording"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="@color/DarkGreen"
+        android:fontFamily="@font/roboto_regular"
+        android:onClick="StartRecording"
+        android:text="Start Recording"
+        android:textStyle="bold"
+        android:textColor="@android:color/white" />
+
+
+
+
+</LinearLayout>

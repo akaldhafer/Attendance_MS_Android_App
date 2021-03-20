@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="pp.facerecognizer">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        tools:replace="allowBackup, label"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/apu"
+        android:label="APU AMS"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/admin_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".StudentList"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity android:name=".StudentLogin" />
+        <activity android:name=".StudentProfile" />
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".AssignedCourseList"/>
+        <activity android:name=".ReviewAttendanceRecord"/>
+        <activity android:name=".MarkAttendance" />
+        <activity android:name=".AddLecturer"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity android:name=".TeachersActivity" />
+        <activity android:name=".AddStudents"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity android:name=".AdminDashboard" />
+        <activity android:name=".AddCourse"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity android:name=".TeacherLogin" />
+        <activity android:name=".LecturerProfile" />
+        <activity android:name=".AssignCourse" />
+        <activity android:name=".AttendanceList" />
+        <activity android:name=".StudentAttendancelist" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".FaceRecognizer"/>
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".CourseList"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity android:name=".lecturerList"
+            android:parentActivityName=".AdminDashboard"/>
+        <activity
+            android:name=".StartScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+    </application>
+
+</manifest>

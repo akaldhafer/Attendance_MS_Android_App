@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "479043801291",
+    "project_id": "amsystem-b76dd",
+    "storage_bucket": "amsystem-b76dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479043801291:android:8fbfd3b7c13f3cd4a84b4e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479043801291-m6a6coo16r4mae2q47h9p7kpbqg0hfrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh__Lfd15CUzOz6HpqsbSsvetwd14D1Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479043801291-m6a6coo16r4mae2q47h9p7kpbqg0hfrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479043801291:android:aedcec5f69c944e3a84b4e",
+        "android_client_info": {
+          "package_name": "pp.facerecognizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479043801291-m6a6coo16r4mae2q47h9p7kpbqg0hfrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh__Lfd15CUzOz6HpqsbSsvetwd14D1Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479043801291-m6a6coo16r4mae2q47h9p7kpbqg0hfrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

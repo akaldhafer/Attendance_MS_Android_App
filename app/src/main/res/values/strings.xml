@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="course">Course</string>
+    <string name="clear_all_label">Clear all</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="ok_label">Ok</string>
+</resources>

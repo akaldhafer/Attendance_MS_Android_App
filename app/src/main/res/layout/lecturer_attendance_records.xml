@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_margin="7dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/CardViewAttend"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:id="@+id/LecturerName"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/LecturerN"
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:text="Intake Code"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/seIntakeCode"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:text="Intake Code"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:text="Lecturer ID"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/seLecturerID"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:text="Lecturer ID"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="31dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:text="Course ID"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/seCourseID"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:text="Course ID"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="31dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:text="Class No/Total Classes"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/seClassNo"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:text="Class No/Total Classes"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:background="@color/colorBlue"
+                        android:text="Student List"
+                        android:textAlignment="center"
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:id="@+id/seStudentIDs"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:text="Student ID"
+                        android:textAlignment="center"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:background="@color/DarkGreen"
+                        android:text="Attended Student List"
+                        android:textAlignment="center"
+                        android:textColor="@color/Black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:id="@+id/seAttendedStudentIDs"
+                        android:lines="1"
+                        android:padding="10dp"
+                        android:text="Student ID"
+                        android:textAlignment="center"
+                        android:textColor="@color/Black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChartLecturer"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_gravity="center_vertical"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

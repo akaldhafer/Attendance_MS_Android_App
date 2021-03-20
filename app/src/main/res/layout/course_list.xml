@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_margin="7dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/CardViewC"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:id="@+id/CourseName2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:id="@+id/CourseN2"
+                        android:textSize="14sp"
+                        android:lines="1"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:text="Course Name"
+                        android:padding="10dp"
+                        />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/NameOfCourse2"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:text="Course Name"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:id="@+id/CourseLeader"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:textSize="14sp"
+                        android:lines="1"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:text="Course Leader"
+                        android:padding="10dp"
+                        />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/LeaderOfCourse"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:text="Course leader"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:textSize="14sp"
+                        android:lines="1"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:text="Course ID"
+                        android:padding="10dp"
+                        />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/IDOfCourse"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:text="Course ID"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="30"
+                        android:textSize="14sp"
+                        android:lines="1"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:text="Level"
+                        android:padding="10dp"
+                        />
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="70"
+                        android:id="@+id/Level"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:text="Level"
+                        android:padding="10dp"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
