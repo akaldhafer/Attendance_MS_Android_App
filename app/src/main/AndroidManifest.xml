@@ -46,7 +46,6 @@
         <activity android:name=".AttendanceList" />
         <activity android:name=".StudentAttendancelist" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".FaceRecognizer"/>
         <activity android:name=".AdminLogin" />
         <activity android:name=".CourseList"
             android:parentActivityName=".AdminDashboard"/>

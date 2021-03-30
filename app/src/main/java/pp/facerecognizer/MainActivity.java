@@ -24,7 +24,6 @@ import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -40,10 +39,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.face.Face;
@@ -78,6 +74,9 @@ import org.tensorflow.lite.support.image.ops.ResizeWithCropOrPadOp;
 /**
 * An activity that uses a TensorFlowMultiBoxDetector and ObjectTracker to detect and then track
 * objects.
+ * reference: the face recognizer function has been used from the following resource
+ * Vasu Garg. 2020. Face Recognition on Android Studio. [online]. available at:
+ * https://www.youtube.com/watch?v=kzP7NIqFEHs [accessed in 2021/01/11]
 */
 public class MainActivity extends AppCompatActivity {
     protected Interpreter tflite;
@@ -114,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         initComponents();
     }
+    /*Check if there is available attendance record*/
     private void recordAttendance(){
 
         FirebaseFirestore.getInstance().collection("AttendanceRecords")
@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*Update the student attendance */
     private void updateAttendance() {
         //update the attendance
         DocumentReference record = firebaseFirestore.collection("AttendanceRecords").document(currentTime);
@@ -204,13 +205,13 @@ public class MainActivity extends AppCompatActivity {
         testImage=(ImageView)findViewById(R.id.image2);
         buverify=(Button)findViewById(R.id.verify);
         result_text=(TextView)findViewById(R.id.result);
-
+        /*load the library for face recognition*/
         try{
             tflite=new Interpreter(loadmodelfile(this));
         }catch (Exception e) {
             e.printStackTrace();
         }
-        //to pick image
+        //to pick image for test
         testImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,13 +226,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        /*Load the student image from the database*/
         Picasso.with(this).load(simage).into(oriImage);
+        /*Verify the student faces*/
         buverify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 double distance=calculate_distance(ori_embedding,test_embedding);
-
+                /* calculate  the distance between the two images */
                 if(distance<6.0) {
                     result_text.setText("Result : Same Faces");
                     //Toast.makeText(MainActivity.this, "Student verified",Toast.LENGTH_LONG).show();
@@ -251,18 +254,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        //get the bitmap of the original image
         BitmapDrawable drawable = (BitmapDrawable) oriImage.getDrawable();
         Bitmap bitmap = drawable.getBitmap();
+        /*send the original bitmap to the face detector function*/
         face_detector(bitmap,"original");
+
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
-
+                //get the image uri
                 imageuri = result.getUri();
-               // imageuri = data.getData();
+
                 try {
+                    //get the bitmap of the test image
                     testbitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageuri);
                     testImage.setImageBitmap(testbitmap);
+                    //send the test bitmap to the face detector
                     face_detector(testbitmap,"test");
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -276,11 +284,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void PickerImage() {
+        //load the cropped image
         CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .start(MainActivity.this);
     }
     private double calculate_distance(float[][] ori_embedding, float[][] test_embedding) {
+        //calculate the distance between the two arrays
         double sum =0.0;
         for(int i=0;i<128;i++){
             sum=sum+Math.pow((ori_embedding[0][i]-test_embedding[0][i]),2.0);
@@ -317,8 +327,9 @@ public class MainActivity extends AppCompatActivity {
         return new NormalizeOp(IMAGE_MEAN, IMAGE_STD);
     }
 
+    //detect the faces
     public void face_detector(final Bitmap bitmap, final String imagetype){
-
+        //convert the image to image format
         final InputImage image = InputImage.fromBitmap(bitmap,0);
         FaceDetector detector = FaceDetection.getClient();
         detector.process(image)
@@ -326,11 +337,11 @@ public class MainActivity extends AppCompatActivity {
                         new OnSuccessListener<List<Face>>() {
                             @Override
                             public void onSuccess(List<Face> faces) {
-                                // Task completed successfully
+                                // get all the faces in the image
                                 for (Face face : faces) {
                                     Rect bounds = face.getBoundingBox();
                                     cropped = Bitmap.createBitmap(bitmap, bounds.left, bounds.top, bounds.width(), bounds.height());
-                                    get_embaddings(cropped,imagetype);
+                                    get_embeddings(cropped,imagetype);
                                 }
                             }
 
@@ -344,8 +355,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
     }
-
-    public void get_embaddings(Bitmap bitmap,String imagetype){
+    // get the embedding of the image
+    public void get_embeddings(Bitmap bitmap, String imagetype){
 
         TensorImage inputImageBuffer;
         float[][] embedding = new float[1][128];
@@ -354,9 +365,11 @@ public class MainActivity extends AppCompatActivity {
         int[] imageShape = tflite.getInputTensor(imageTensorIndex).shape(); // {1, height, width, 3}
         imageSizeY = imageShape[1];
         imageSizeX = imageShape[2];
+        //get the image data type
         DataType imageDataType = tflite.getInputTensor(imageTensorIndex).dataType();
 
         inputImageBuffer = new TensorImage(imageDataType);
+
 
         inputImageBuffer = loadImage(bitmap,inputImageBuffer);
 
