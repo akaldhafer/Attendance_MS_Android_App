@@ -2,6 +2,8 @@
 The mobile application has been developed with Java programming language and Firebase. The application deveolped for three users: University Admin(handles users and modules records), University Lecturer(handles student attendance either based on face recogntion or checkbox, view attendance), University Student(take attendance based on face recogntion and view attendance). 
 
 Version 2 of this application is private: you can text me to have it. Instagram: ak_aldhafer 
+
+
 [![Build Status](https://travis-ci.org/pillarpond/face-recognizer-android.svg?branch=master)](https://travis-ci.org/pillarpond/face-recognizer-android)
 
 This sample demonstrates realtime face recognition on Android. The project is based on the [FaceNet](https://arxiv.org/abs/1503.03832).
